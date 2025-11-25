@@ -132,7 +132,7 @@ cd vue-product-app
 
 Install dependencies:
 
-npm install
+npm install (ENSURE YOU SWITCH TO NODE VERSION  v20.19.5   USE NVM FOR THIS)
 
 Start development server:
 
