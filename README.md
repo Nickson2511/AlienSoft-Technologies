@@ -147,6 +147,11 @@ Go to Login Page: /login
 
 Enter your username & password (dummy credentials for DummyJSON)
 
+FOR TESTING USE: 
+
+username: 'emilys',
+password: 'emilyspass',
+
 Click Login → redirected to Product List
 
 Use search/filter or add new product
