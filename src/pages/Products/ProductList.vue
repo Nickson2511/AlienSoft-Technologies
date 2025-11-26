@@ -1,7 +1,7 @@
 <template>
-  <SidebarLayout v-model:isSidebarOpen="isSidebarOpen">
-    <AppLayout>
-      <div class="p-6 sm:p-8 max-w-[1400px] mx-auto w-full">
+  
+    <AppLayout v-model:isSidebarOpen ="isSidebarOpen">
+      <div class="p-6 sm:p-8 w-full">
 
         <!-- Top bar: DashboardHeader -->
         <DashboardHeader
@@ -82,7 +82,7 @@
         </div>
       </div>
     </AppLayout>
-  </SidebarLayout>
+  
 </template>
 
 <script lang="ts" setup>
@@ -90,7 +90,8 @@ import { ref, computed, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 import { useProductsStore } from '@/stores/products.store';
 import DashboardHeader from '@/components/common/DashboardHeader.vue';
-import SidebarLayout from '@/components/common/SidebarLayout.vue';
+//import SidebarLayout from '@/components/common/SidebarLayout.vue';
+import AppLayout from '@/layouts/AppLayout.vue';
 
 
 const store = useProductsStore();

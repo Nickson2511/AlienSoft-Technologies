@@ -1,5 +1,5 @@
 <template>
-  <AppLayout>
+  <AppLayout v-model:isSidebarOpen = "isSidebarOpen">
     <!-- DashboardHeader -->
     <DashboardHeader
       :title="'Product Details'"
@@ -166,6 +166,7 @@ import { ref, onMounted, computed } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { useProductsStore } from '@/stores/products.store';
 import DashboardHeader from '@/components/common/DashboardHeader.vue';
+import AppLayout from '@/layouts/AppLayout.vue';
 
 
 const store = useProductsStore();
@@ -175,6 +176,7 @@ const router = useRouter();
 const productId = Number(route.params.id);
 const isDeleting = ref(false);
 const search = ref('');
+const isSidebarOpen = ref(false);
 
 // Fetch product by ID on mount
 onMounted(async () => {

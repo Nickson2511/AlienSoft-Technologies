@@ -27,4 +27,5 @@ export interface AddProductPayload {
     brand?: string;
     category?: string;
     images?: string[];
+    
 }

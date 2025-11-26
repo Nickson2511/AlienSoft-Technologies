@@ -83,6 +83,8 @@ src/
  │    │     ├── AppButton.vue
  │    │     ├── AppInput.vue
  │    │     └── AppCard.vue
+            └── DashboardHeader.vue
+
  │
  ├── composables/        # Reusable logic (like React hooks)
  │    ├── useFetch.ts
@@ -151,7 +153,7 @@ FOR TESTING USE:
 
 username: 'emilys',
 password: 'emilyspass',
-
+ 
 Click Login → redirected to Product List
 
 Use search/filter or add new product

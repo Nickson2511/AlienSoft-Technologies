@@ -1,6 +1,14 @@
 <template>
-  <AppLayout>
+  <AppLayout v-model:isSidebarOpen = "isSidebarOpen">
     <div class="p-6 max-w-5xl mx-auto space-y-6">
+      <!--Top bar DashboardHeader-->
+      <DashboardHeader
+          :title="'Product Management'"
+          :searchQuery="search"
+          @search="search = $event"
+          @toggle-sidebar="isSidebarOpen = !isSidebarOpen"
+        />
+
       <!-- Page Header -->
       <div class="space-y-1">
         <h1 class="text-2xl md:text-3xl font-bold text-gray-800">Add New Product</h1>
@@ -127,6 +135,8 @@ import { ref } from "vue";
 import { useRouter } from "vue-router";
 import { useProductsStore } from "@/stores/products.store";
 import type { AddProductPayload } from "@/types/Product";
+import AppLayout from "@/layouts/AppLayout.vue";
+import DashboardHeader from "@/components/common/DashboardHeader.vue";
 
 const router = useRouter();
 const store = useProductsStore();
@@ -144,6 +154,10 @@ const categories = ["Electronics", "Clothing", "Beauty", "Home", "Sports", "Othe
 
 // File input reference
 const fileInput = ref<HTMLInputElement>();
+
+const isSidebarOpen = ref(false);
+const search = ref('');
+
 
 const triggerFileInput = () => {
   fileInput.value?.click();
