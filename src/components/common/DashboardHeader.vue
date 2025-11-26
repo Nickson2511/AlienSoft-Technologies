@@ -3,10 +3,10 @@
 
     <!-- TOP ROW (Hamburger + Title + Icons) -->
     <div class="flex justify-between items-center w-full flex-wrap gap-4">
-      
-      <!-- LEFT: Hamburger + Title -->
-      <div class="flex items-center gap-3 flex-1 min-w-[200px]">
-        
+
+      <!-- LEFT: Hamburger + Title + Decorative Grid -->
+      <div class="flex items-center gap-3 min-w-0">
+
         <!-- Hamburger (xs & sm only) -->
         <button
           @click="$emit('toggle-sidebar')"
@@ -25,13 +25,13 @@
         </div>
 
         <!-- Page Title -->
-        <h1 class="text-lg md:text-xl font-bold text-gray-800 truncate">
+        <h1 class="text-lg md:text-xl font-bold text-gray-800 truncate min-w-0 max-w-[150px] sm:max-w-[200px] lg:max-w-[250px]">
           {{ title }}
         </h1>
       </div>
 
       <!-- RIGHT: Add Btn + Bell + Profile -->
-      <div class="flex items-center gap-3 flex-shrink-0">
+      <div class="flex items-center gap-3 min-w-0">
 
         <!-- Add Product Button (HIDDEN on xs/sm) -->
         <button
@@ -118,6 +118,6 @@ const emitSearch = () => emit('search', searchQuery.value);
 
 <style scoped>
 h1 {
-  max-width: 200px;
+  min-width: 0;
 }
 </style>
